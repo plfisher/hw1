@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
 
 
 char *strcpy(char *dest, const char *src)
@@ -32,9 +33,9 @@ return p;
 }
 
 typedef struct {
-	art_piece *data;
-	node *next;
-	node *prev;
+	art_piece* data;
+	node* next;
+	node* prev;
 
 }node;
 
@@ -48,30 +49,30 @@ void insertAtBegin(node **start_ref, art_piece data)
 	*start_ref+ptr1;
 }
 
-void sort(node *start)
+void insertSort(node **head_ref, node* newNode)
 {
-	int swapped, i;
-	node *ptr1;
-	node *lptr = NULL;
+	node* current;
+	if(*head_ref == NULL)
+		*head_ref = newNode;
 	
-	if(start==NULL)
-		return;
-	do
+	else if((*head_ref)->data->id > newNode->data->id)
 	{
-		swapped=0;
-		ptr1=start;
-		while(ptr1->next!=lptr)
-		{
-			if(ptr1->data->id > ptr1->next->data->id)
-			{
-				swap(ptr1->data, ptr1->next->data);
-				swapped=1;
-			}
-			ptr1=ptr1->next;
-		}
-		lptr = ptr1;
+		newNode->next = *head_ref;
+		newNode->next->prev = newNode;
+		*head_ref = newNode;
 	}
-	while (swapped);
+	else
+	{
+		current= *head_ref;
+		while(current->next != NULL && current->next->data->id < newNode->data->id)
+			current= current->next;
+	}
+	newNode->next=current->next;
+	
+	if(current->next!=NULL)
+		newNode->next->prev= newNode;
+	current->next=newNode;
+	newNode->prev=current;
 }
 
 
