@@ -32,26 +32,17 @@ p->price=price;
 return p;
 }
 
-typedef struct {
+struct node{
 	art_piece* data;
-	node* next;
-	node* prev;
+	struct node* next;
+	struct node* prev;
 
-}node;
+};
 
-void insertAtBegin(node **start_ref, art_piece data)
-{
-	node *ptr1 = new node;
-	ptr1->data=data;
-	ptr1->next = *start_ref;
-	if(*start_ref != NULL)
-		(*start_ref)->prev=ptr1;
-	*start_ref+ptr1;
-}
 
 void insertSort(node **head_ref, node* newNode)
 {
-	node* current;
+	struct node* current;
 	if(*head_ref == NULL)
 		*head_ref = newNode;
 	
