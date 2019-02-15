@@ -40,7 +40,7 @@ struct node{
 };
 
 
-void insertSort(node **head_ref, node* newNode)
+void insertSort(struct node **head_ref, struct node* newNode)
 {
 	struct node* current;
 	if(*head_ref == NULL)
