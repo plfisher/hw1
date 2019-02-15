@@ -2,6 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+char *strcpy(char *dest, const char *src)
+{
+	unsigned i;
+	for(i=0; (src+i)!='\0'; i++)
+		dest+i=src+i;
+	
+	dest+i='\0';
+	return dest;
+}
+
 typedef struct  {
 	int id;
 	char *type;
@@ -10,13 +21,15 @@ typedef struct  {
 	int price;
 }art_piece;
 
+
+
 art_piece *createArtPiece(int id, char *t, char *artn, char *artistn, int price){
 
 art_piece *p= malloc(sizeof(art_piece));
 p->id = id;
-p->type= strdup(t);
-p->artname=strdup(artn);
-p->artistname=strdup(artistn);
+strcpy(type, t);
+strcpy(artname, artn);
+strcpy(artistname, artistn);	
 p->price=price;
 return p;
 }
@@ -26,6 +39,8 @@ typedef struct {
 	struct node *prev;
 
 }node;
+
+
 
 
 
