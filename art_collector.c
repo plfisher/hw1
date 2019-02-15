@@ -13,7 +13,7 @@ char *strcpy(char *dest, const char *src)
 	return dest;
 }
 
-typedef struct  {
+typedef struct {
 	int id;
 	char *type;
 	char *artname;
@@ -50,7 +50,7 @@ void insertAtBegin(node **start_ref, art_piece data)
 
 void sort(node *start)
 {
-	int swapper, i;
+	int swapped, i;
 	node *ptr1;
 	node *lptr = NULL;
 	
@@ -60,7 +60,7 @@ void sort(node *start)
 	{
 		swapped=0;
 		ptr1=start;
-		while(ptr1->next != lptr)
+		while(ptr1->next!=lptr)
 		{
 			if(ptr1->data->id > ptr1->next->data->id)
 			{
