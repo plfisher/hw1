@@ -6,7 +6,7 @@
 char *strcpy(char *dest, const char *src)
 {
 	unsigned i;
-	for(i=0; &(src+i)!='\0'; i++)
+	for(i=0; (&(src+i))!='\0'; i++)
 		&(dest+i)=&(src+i);
 	
 	&(dest+i)='\0';
@@ -27,9 +27,9 @@ art_piece *createArtPiece(int id, char *t, char *artn, char *artistn, int price)
 
 art_piece *p= malloc(sizeof(art_piece));
 p->id = id;
-strcpy(p.type, t);
-strcpy(p.artname, artn);
-strcpy(p.artistname, artistn);	
+strcpy(p->type, t);
+strcpy(p->artname, artn);
+strcpy(p->artistname, artistn);	
 p->price=price;
 return p;
 }
