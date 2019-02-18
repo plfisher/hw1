@@ -66,7 +66,82 @@ void insertSort(struct node **head_ref, struct node* newNode)
 	newNode->prev=current;
 }
 
+void readline(char* line) 
+{
+	char* type;
+	type='';
+	int i=0;
+	int id=0;
+	char* idString='';
+	while(line+i!='\0')
+	{
+	while(uppercase(line+i)==1)
+	{
+		type=concat(type, line+i);
+		i++;
+	}
+	while(number(line+i)==1)
+	{
+		idString=concat(idString, line+i);
+		i++;
+	}
+	if(type=='BUY')
+	{
+		
+	}
+	else if(type=='UPDATE')
+	{
+		
+	}
+	else if(type=='SELL')
+	{
+		
+	}
+	else
+	{
+	}
+	}
+	
+	
+}
 
+int number(char* character)
+{
+	if(character>='0' && character <='9')
+		return 1;
+	else
+		return 0;
+}
+int uppercase(char* character)
+{
+	if(character>='a' && character<='z')
+		return 0;
+	else
+		return 1;
+}
+
+char* concat(char* char1, char* char2)
+{
+	
+	int i;
+	int j;
+	int k;
+	int l;
+	
+	for(i=0; char1+i!='\0'; ++i);
+	for(j=0; char2+j!='\0';++j,++i);
+	char* result;
+	result=(char*) malloc(i);
+	for(k=0; char1+k!='\0'; ++k)
+	{
+		result+k=char1+k;
+	}
+	for(l=0; char2+l!='\0'; ++l)
+	{
+		result+i+l=char2+l;
+	}
+return result;
+}
 
 
 
