@@ -132,7 +132,7 @@ int number(char* character)
 }
 int uppercase(char* character)
 {
-	if(character>='a' && character<='z')
+	if(*character>='a' && *character<='z')
 		return 0;
 	else
 		return 1;
@@ -146,17 +146,17 @@ char* concat(char* char1, char* char2)
 	int k;
 	int l;
 	
-	for(i=0; char1+i!='\0'; ++i);
-	for(j=0; char2+j!='\0';++j,++i);
+	for(i=0; *(char1+i)!='\0'; ++i);
+	for(j=0; *(char2+j)!='\0';++j,++i);
 	char* result;
 	result=(char*) malloc(i);
-	for(k=0; char1+k!='\0'; ++k)
+	for(k=0; *(char1+k)!='\0'; ++k)
 	{
 		result+k=char1+k;
 	}
-	for(l=0; char2+l!='\0'; ++l)
+	for(l=0; *(char2+l)!='\0'; ++l)
 	{
-		result+i+l=char2+l;
+		*(result+i+l)=char2+l;
 	}
 return result;
 }
