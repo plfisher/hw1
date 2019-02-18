@@ -3,6 +3,9 @@
 #include <stdlib.h>
 
 
+int number(char* character);
+int uppercase(char* character);
+char* concat(char* char1, char* char2);
 
 char *strcpy(char *dest, const char *src)
 {
