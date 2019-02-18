@@ -88,7 +88,7 @@ void readline(char* line)
 		idString=concat(idString, line+i);
 		i++;
 	}
-	if(type=='BUY')
+	if(*type=='BUY')
 	{
 		
 	}
