@@ -107,11 +107,11 @@ void readline(char* line)
 	{
 		
 	}
-	else if(type=='UPDATE')
+	else if(stringequal(type, "UPDATE")==1)
 	{
 		
 	}
-	else if(type=='SELL')
+	else if(stringequal(type, "SELL")==1)
 	{
 		
 	}
@@ -125,7 +125,7 @@ void readline(char* line)
 
 int number(char* character)
 {
-	if(character>='0' && character <='9')
+	if(*character>='0' && *character <='9')
 		return 1;
 	else
 		return 0;
