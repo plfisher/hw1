@@ -69,11 +69,11 @@ void insertSort(struct node **head_ref, struct node* newNode)
 void readline(char* line) 
 {
 	char* type;
-	type='';
+	type;
 	int i=0;
 	int id=0;
-	char* idString='';
-	while(line+i!='\0')
+	char* idString;
+	while(*(line+i)!='\0')
 	{
 	while(uppercase(line+i)==1)
 	{
