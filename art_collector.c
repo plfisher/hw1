@@ -14,7 +14,7 @@ int stringequal(char* str1, char* str2)
 	{
 		if(*(str1+i)=='\0'|| *(str2+i)=='\0')
 			break;
-		count++;
+		i++;
 	}
 	if(*(str1+i)=='\0' && *(str2+i)=='\0')
 		return 0;
@@ -152,11 +152,11 @@ char* concat(char* char1, char* char2)
 	result=(char*) malloc(i);
 	for(k=0; *(char1+k)!='\0'; ++k)
 	{
-		result+k=char1+k;
+		*(result+k)=*(char1+k);
 	}
 	for(l=0; *(char2+l)!='\0'; ++l)
 	{
-		*(result+i+l)=char2+l;
+		*(result+i+l)=*(char2+l);
 	}
 return result;
 }
