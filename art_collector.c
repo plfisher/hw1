@@ -131,7 +131,7 @@ void readline(char* line)
 			}
 			else if(isupper(line+i)) //art name not in parenthesis
 			{
-				while(*(line+i)!=' ';
+				while(*(line+i)!=' '
 				{
 					artist_name=concat(artist_name, line+i);
 					i++;
@@ -154,7 +154,7 @@ void readline(char* line)
 		}
 		else if(isupper(line+i))//art name capitalizes and not in parenthesis
 		{
-			while(*(line+i)!=' ';
+			while(*(line+i)!=' '
 				{
 					artist_name=concat(artist_name, line+i);
 					i++;
@@ -170,7 +170,7 @@ void readline(char* line)
 			}
 			else if(isupper(line+i)) //art name not in parenthesis
 			{
-				while(*(line+i)!=' ';
+				while(*(line+i)!=' '
 				{
 					artist_name=concat(artist_name, line+i);
 					i++;
