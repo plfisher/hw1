@@ -159,7 +159,7 @@ void readline(char* line)
 					artist_name=concat(artist_name, line+i);
 					i++;
 				}
-			f(*(line+i)=='\"') //artist name in parenthesis
+			if(*(line+i)=='\"') //artist name in parenthesis
 			{
 				i++;
 				while(*(line+i)!='\"')
