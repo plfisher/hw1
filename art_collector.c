@@ -133,7 +133,7 @@ void readline(char* line)
 	}
 	else if(stringequal(type, "SELL")==1)
 	{
-		if(isdigit(line+1)
+		if(isdigit(line+1))
 		   {
 		   }
 		else
