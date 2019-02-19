@@ -90,6 +90,7 @@ void readline(char* line)
 	type;
 	int i=0;
 	int id=0;
+	char* price;
 	char* idString;
 	while(*(line+i)!='\0')
 {
@@ -107,11 +108,88 @@ void readline(char* line)
 	i++; //for space
 	if(stringequal(type, "BUY")==1)
 	{
-		if(stringequal(line+i, "\""))
+		char* art_name;
+		char* artist_name;
+	
+		if(*(line+i)=='\"') //art name in parenthesis
 		{
+			i++;
+			while(*(line+i)!='\"')
+			{
+				art_name=concat(art_name, line+i);
+				i++;
+			}
+			i++;//space between name and artist
+			if(*(line+i)=='\"') //artist name in parenthesis
+			{
+				i++;
+				while(*(line+i)!='\"')
+				{
+					artist_name=concat(artist_name, line+i);
+					i++;
+				}	
+			}
+			else if(isupper(line+i)) //art name not in parenthesis
+			{
+				while(*(line+i)!=' ';
+				{
+					artist_name=concat(artist_name, line+i);
+					i++;
+				}
+			}
+			else
+				fileFormatError();
+			i++;
+			if(isdigit(line+i))
+			{
+				
+				while(isdigit(line+i))
+				{
+					price=concat(price,line+i);
+				}
+			}
+			else
+				fileFormatError();
+				
 		}
-		else if(isupper(line+i))
+		else if(isupper(line+i))//art name capitalizes and not in parenthesis
 		{
+			while(*(line+i)!=' ';
+				{
+					artist_name=concat(artist_name, line+i);
+					i++;
+				}
+			f(*(line+i)=='\"') //artist name in parenthesis
+			{
+				i++;
+				while(*(line+i)!='\"')
+				{
+					artist_name=concat(artist_name, line+i);
+					i++;
+				}	
+			}
+			else if(isupper(line+i)) //art name not in parenthesis
+			{
+				while(*(line+i)!=' ';
+				{
+					artist_name=concat(artist_name, line+i);
+					i++;
+				}
+			}
+			else
+				fileFormatError();
+			i++;
+			if(isdigit(line+i))
+			{
+				
+				while(isdigit(line+i))
+				{
+					price=concat(price,line+i);
+				}
+			}
+			else
+				fileFormatError();
+			
 		}
 		else
 		{
@@ -120,7 +198,7 @@ void readline(char* line)
 	}
 	else if(stringequal(type, "UPDATE")==1)
 	{
-		if(stringequal(line+i, "\""))
+		if(*(line+i)=='\"')
 		{
 		}
 		else if(isupper(line+i))
