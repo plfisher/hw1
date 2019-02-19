@@ -1,11 +1,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 
-int number(char* character);
-int uppercase(char* character);
 char* concat(char* char1, char* char2);
+void fileFormatError();
 
 int stringequal(char* str1, char* str2)
 {
@@ -24,7 +24,7 @@ int stringequal(char* str1, char* str2)
 
 char *strcpy(char *dest, const char *src)
 {
-	unsigned i;
+	int i;
 	for(i=0; (*(src+i))!='\0'; i++)
 		*(dest+i)=*(src+i);
 	
@@ -92,50 +92,60 @@ void readline(char* line)
 	int id=0;
 	char* idString;
 	while(*(line+i)!='\0')
-	{
-	while(uppercase(line+i)==1)
+{
+	while(isupper(line+i)==1)//for type
 	{
 		type=concat(type, line+i);
 		i++;
 	}
-	while(number(line+i)==1)
+	
+	while(isdigit(line+i)==1)//for id
 	{
 		idString=concat(idString, line+i);
 		i++;
 	}
+	i++; //for space
 	if(stringequal(type, "BUY")==1)
 	{
-		
+		if(stringequal(line+i, "\""))
+		{
+		}
+		else if(isupper(line+i))
+		{
+		}
+		else
+		{
+			fileFormatError();
+		}
 	}
 	else if(stringequal(type, "UPDATE")==1)
 	{
-		
+		if(stringequal(line+i, "\""))
+		{
+		}
+		else if(isupper(line+i))
+		{
+		}
+		else
+		{
+			fileFormatError();
+		}
 	}
 	else if(stringequal(type, "SELL")==1)
 	{
-		
+		if(isdigit(line+1)
+		   {
+		   }
+		else
+		   fileFormatError();
 	}
 	else
 	{
+		fileFormatError();
 	}
-	}
+}
 	
 	
-}
-
-int number(char* character)
-{
-	if(*character>='0' && *character <='9')
-		return 1;
-	else
-		return 0;
-}
-int uppercase(char* character)
-{
-	if(*character>='a' && *character<='z')
-		return 0;
-	else
-		return 1;
 }
 
 char* concat(char* char1, char* char2)
@@ -161,6 +171,9 @@ char* concat(char* char1, char* char2)
 return result;
 }
 
+void fileFormatError()
+{
+}
 
 
 
