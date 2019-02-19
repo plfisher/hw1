@@ -259,6 +259,23 @@ void fileFormatError()
 {
 }
 
+int readfile(char* filename)
+{
+	int c;
+	FILE *file;
+	char* line=NULL;
+	size_t len=0;
+	file=fopen(filename, "r");
+	if(fp==NULL)
+		exit(EXIT_FAILURE //fileis not found or cant be read
+	while(c!=-1)
+	{
+		c=getchar();
+		char* 
+		
+	}
+	
+}
 int main(int argc, char* argv[]) { /* ... */ };
 
 
