@@ -196,7 +196,7 @@ void readline(char* line)
 			fileFormatError();
 		}
 	
-	}			      }
+	}
 	else if(stringequal(type, "UPDATE")==1)
 	{
 		if(*(line+i)=='\"')
